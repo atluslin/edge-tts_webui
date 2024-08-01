@@ -12,6 +12,16 @@ SUPPORTED_VOICES = {
     'Yunyang-云阳-男性': 'zh-CN-YunyangNeural',
     'liaoning-Xiaobei-小北-辽宁-女性': 'zh-CN-liaoning-XiaobeiNeural',
     'shaanxi-Xiaoni-小妮-陕西-女性': 'zh-CN-shaanxi-XiaoniNeural',
+    'HK-HiuGaai-慧开-粤语-女性': 'zh-HK-HiuGaaiNeural',
+    'HK-HiuMaan-慧漫-粤语-女性': 'zh-HK-HiuMaanNeural',
+    'HK-WanLung-王伦-粤语-男性': 'zh-HK-WanLungNeural',
+    'TW-HsiaoChen-何小辰-台湾-女性': 'zh-TW-HsiaoChenNeural',
+    'TW-YunJhe-云杰-台湾-男性': 'zh-TW-YunJheNeural',
+    'TW-HsiaoYu-何小云-台湾-女性': 'zh-TW-HsiaoYuNeural',
+    'US-Ava-艾娃-多语种-女性': 'en-US-AvaMultilingualNeural',
+    'US-Andrew-安德鲁-多语种-男性': 'en-US-AndrewMultilingualNeural',
+    'US-Emma-艾玛-多语种-女性': 'en-US-EmmaMultilingualNeural',
+    'US-Brian-布莱恩-多语种-男性': 'en-US-BrianMultilingualNeural',
 }
 
 # 发音切换
@@ -57,7 +67,7 @@ def clearSpeech():
 with gr.Blocks(css="style.css", title="文本生成语音") as demo:
     gr.Markdown("""
     # 微软TTS文本生成语音助手
-      战略信息部
+      战略信息部  如需增加语音种类联系 963963 林隽
     """)
     with gr.Row():
         with gr.Column():
@@ -67,7 +77,10 @@ with gr.Blocks(css="style.css", title="文本生成语音") as demo:
             voices = gr.Dropdown(choices=[
                 "Xiaoxiao-小小-女性", "Xiaoyi-小艺-女性", "Yunjian-云剑-男性", "Yunxi-云西-男性",
                 "Yunxia-云夏-男性", "Yunyang-云阳-男性", "liaoning-Xiaobei-小北-辽宁-女性",
-                "shaanxi-Xiaoni-小妮-陕西-女性"
+                "shaanxi-Xiaoni-小妮-陕西-女性","HK-HiuGaai-慧开-粤语-女性","HK-HiuMaan-慧漫-粤语-女性",
+                "HK-WanLung-王伦-粤语-男性","TW-HsiaoChen-何小辰-台湾-女性","TW-YunJhe-云杰-台湾-男性",
+                "TW-HsiaoYu-何小云-台湾-女性","US-Ava-艾娃-多语种-女性","US-Andrew-安德鲁-多语种-男性",
+                "US-Emma-艾玛-多语种-女性","US-Brian-布莱恩-多语种-男性"
             ],
                                  value="Xiaoxiao-小小-女性",
                                  label="音色",
