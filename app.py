@@ -8,7 +8,7 @@ SUPPORTED_VOICES = {
     'Xiaoyi-小艺-女性': 'zh-CN-XiaoyiNeural',
     'Yunjian-云剑-男性': 'zh-CN-YunjianNeural',
     'Yunxi-云西-男性': 'zh-CN-YunxiNeural',
-    'Yunxia-云夏-男性': 'zh-CN-YunxiaNeural',
+    'Yunxia-云夏-女性': 'zh-CN-YunxiaNeural',
     'Yunyang-云阳-男性': 'zh-CN-YunyangNeural',
     'liaoning-Xiaobei-小北-辽宁-女性': 'zh-CN-liaoning-XiaobeiNeural',
     'shaanxi-Xiaoni-小妮-陕西-女性': 'zh-CN-shaanxi-XiaoniNeural',
@@ -22,6 +22,11 @@ SUPPORTED_VOICES = {
     'US-Andrew-安德鲁-多语种-男性': 'en-US-AndrewMultilingualNeural',
     'US-Emma-艾玛-多语种-女性': 'en-US-EmmaMultilingualNeural',
     'US-Brian-布莱恩-多语种-男性': 'en-US-BrianMultilingualNeural',
+    'en-Libby-英国-女性': 'en-GB-LibbyNeural',
+    'en-Maisie-英国-女性': 'en-GB-MaisieNeural',
+    'en-Ryan-英国-男性': 'en-GB-RyanNeural',
+    'en-Sonia-英国-女性': 'en-GB-SoniaNeural',
+    'en-Thomas-英国-男性': 'en-GB-ThomasNeural',
 }
 
 # 发音切换
@@ -76,11 +81,12 @@ with gr.Blocks(css="style.css", title="文本生成语音") as demo:
         with gr.Column():
             voices = gr.Dropdown(choices=[
                 "Xiaoxiao-小小-女性", "Xiaoyi-小艺-女性", "Yunjian-云剑-男性", "Yunxi-云西-男性",
-                "Yunxia-云夏-男性", "Yunyang-云阳-男性", "liaoning-Xiaobei-小北-辽宁-女性",
+                "Yunxia-云夏-女性", "Yunyang-云阳-男性", "liaoning-Xiaobei-小北-辽宁-女性",
                 "shaanxi-Xiaoni-小妮-陕西-女性","HK-HiuGaai-慧开-粤语-女性","HK-HiuMaan-慧漫-粤语-女性",
                 "HK-WanLung-王伦-粤语-男性","TW-HsiaoChen-何小辰-台湾-女性","TW-YunJhe-云杰-台湾-男性",
                 "TW-HsiaoYu-何小云-台湾-女性","US-Ava-艾娃-多语种-女性","US-Andrew-安德鲁-多语种-男性",
-                "US-Emma-艾玛-多语种-女性","US-Brian-布莱恩-多语种-男性"
+                "US-Emma-艾玛-多语种-女性","US-Brian-布莱恩-多语种-男性","en-Libby-英国-女性","en-Maisie-英国-女性",
+                "en-Ryan-英国-男性","en-Sonia-英国-女性","en-Thomas-英国-男性"
             ],
                                  value="Xiaoxiao-小小-女性",
                                  label="音色",
@@ -120,4 +126,4 @@ with gr.Blocks(css="style.css", title="文本生成语音") as demo:
             clear.click(fn=clearSpeech, outputs=[text, audio])
 
 if __name__ == "__main__":
-    demo.launch(server_name="0.0.0.0",server_port=7870,share=False)
+    demo.launch(server_name="0.0.0.0",server_port=7870,share=False,max_threads=10)
